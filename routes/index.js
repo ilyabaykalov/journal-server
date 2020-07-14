@@ -1,16 +1,16 @@
 let router = require('express').Router();
 
-router.get('/', function (req, res) {
-	res.render('index', { title: 'Journal server' });
+router.get('/', function(req, res) {
+  res.render('index', { title: 'Journal server' });
 });
 
-router.get('/test', function (req, res) {
-	res.send('<h1>simple text</h1>');
+router.get('/test', function(req, res) {
+  res.send('<h1>simple text</h1>');
 });
 
 let chapter = require('../query/chapter'),
-	colors = require('../query/colors'),
-	lessons = require('../query/lessons');
+    colors = require('../query/colors'),
+    lessons = require('../query/lessons');
 
 router.get('/chapters/only', chapter.getAllChapters);
 router.get('/chapters', chapter.getAllData);
